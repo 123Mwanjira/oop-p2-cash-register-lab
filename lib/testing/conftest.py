@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 
+import sys
+from pathlib import Path
+
+# Add parent directory to path so 'cash_register' can be imported
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 def pytest_itemcollected(item):
     par = item.parent.obj
     node = item.obj
